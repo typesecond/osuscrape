@@ -2,10 +2,11 @@ from ossapi import Ossapi, UserLookupKey, GameMode, RankingType
 from discord.ext import commands
 import discord
 import requests
+from discord import SlashCommand, SlashContext
 
-client_id = 'None'
+client_id = 28923
 
-client_secret = 'None'
+client_secret = 'pv6WR4HNI4yKlL7vWuvtDx2Owy8qUf2aoNpsT55v'
 
 api = Ossapi(client_id, client_secret)
 
@@ -23,6 +24,7 @@ intents = discord.Intents.all()
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
+slash = SlashCommand(bot, sync_commands=True)  #
 @bot.command()
 async def topscorer(ctx):
     # Replace with actual method to fetch top scorer from Osu! API
@@ -38,7 +40,7 @@ async def top(ctx):
    requests.get("https://osu.ppy.sh/api/v2/users?ids%5B%5D=1") 
    
 #response = (f"Your top play: {top.scores_best_count()}")
-bot.run('TOKEN')
+bot.run('MTE4NjExMjgxNTIxMjI2OTY4MA.GQxtU3.mz9a6u1gybsCIcN_CgxfmZTPTMfpDGrW3NXmIw')
 
 
 
