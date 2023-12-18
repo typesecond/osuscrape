@@ -4,9 +4,9 @@ import discord
 import requests
 from discord import SlashCommand, SlashContext
 
-client_id = 28923
+client_id = 'None'
 
-client_secret = 'pv6WR4HNI4yKlL7vWuvtDx2Owy8qUf2aoNpsT55v'
+client_secret = 'None'
 
 api = Ossapi(client_id, client_secret)
 
@@ -40,7 +40,7 @@ async def top(ctx):
    requests.get("https://osu.ppy.sh/api/v2/users?ids%5B%5D=1") 
    
 #response = (f"Your top play: {top.scores_best_count()}")
-bot.run('MTE4NjExMjgxNTIxMjI2OTY4MA.GQxtU3.mz9a6u1gybsCIcN_CgxfmZTPTMfpDGrW3NXmIw')
+bot.run('TOKEN')
 
 
 

@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from discord_slash import SlashCommand # Importing the newly installed library.
 
 load_dotenv()
-TOKEN = os.getenv('MTE4NjExMjgxNTIxMjI2OTY4MA.GQxtU3.mz9a6u1gybsCIcN_CgxfmZTPTMfpDGrW3NXmIw')
+TOKEN = os.getenv('TOKEN')
 
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)
@@ -25,4 +25,4 @@ async def on_member_join(member):
         f'Hi {member.name}, welcome to my Discord server!'
     )
 
-client.run('MTE4NjExMjgxNTIxMjI2OTY4MA.GQxtU3.mz9a6u1gybsCIcN_CgxfmZTPTMfpDGrW3NXmIw')
+client.run('TOKEN')
