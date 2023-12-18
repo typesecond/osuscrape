@@ -5,7 +5,7 @@ import discord
 from dotenv import load_dotenv
 
 load_dotenv()
-TOKEN = os.getenv('MTE4NjExMjgxNTIxMjI2OTY4MA.GfwQtm.sqKn5zEWlTD8xs56yKbMUel5WNk0VwNnj2uZGA')
+TOKEN = os.getenv('TOKEN')
 
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)
@@ -21,4 +21,4 @@ async def on_member_join(member):
         f'Hi {member.name}, welcome to my Discord server!'
     )
 
-client.run('MTE4NjExMjgxNTIxMjI2OTY4MA.GfwQtm.sqKn5zEWlTD8xs56yKbMUel5WNk0VwNnj2uZGA')
+client.run('TOKEN')

@@ -3,9 +3,9 @@ from discord.ext import commands
 import discord
 import requests
 
-client_id = 28923
+client_id = 'None'
 
-client_secret = 'pv6WR4HNI4yKlL7vWuvtDx2Owy8qUf2aoNpsT55v'
+client_secret = 'None'
 
 api = Ossapi(client_id, client_secret)
 
@@ -38,7 +38,7 @@ async def top(ctx):
    requests.get("https://osu.ppy.sh/api/v2/users?ids%5B%5D=1") 
    
 #response = (f"Your top play: {top.scores_best_count()}")
-bot.run('MTE4NjExMjgxNTIxMjI2OTY4MA.GfwQtm.sqKn5zEWlTD8xs56yKbMUel5WNk0VwNnj2uZGA')
+bot.run('TOKEN')
 
 
 
