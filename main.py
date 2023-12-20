@@ -37,9 +37,27 @@ api = Ossapi(client_id, client_secret)
 
 
 
-top50 = api.ranking(GameMode.OSU, RankingType.PERFORMANCE)
+top= api.ranking(GameMode.OSU, RankingType.PERFORMANCE)
 
-top50 = api.ranking("osu", "performance")
+top= api.ranking("osu", "performance")
+
+top25 = api.ranking(GameMode.OSU, RankingType.PERFORMANCE)
+
+top25= api.ranking("osu", "performance")
+
+
+top25 = [ranking.user.username for ranking in top25.ranking[:25]]
+
+
+top25 ="\n".join([f"{index}. {username}" for index, username in enumerate(top25, start=1)])
+print(top25)
+
+
+
+
+
+
+
 
 
 usscore = api.user_scores(29312082, ScoreType.BEST)
@@ -69,12 +87,18 @@ async def topscorer(ctx):
     # Replace with actual method to fetch top scorer from Osu! API
    
     # Format the data in a user-friendly way
-    response = (f"Top 25: {top50.ranking[0].user.username}")
+    response = (f"The king: {top.ranking[0].user.username}")
     await ctx.send(response)
 @bot.command()
 async def mybest(ctx):
    
     response = (f"Your top score is: {first_user_score} pp on {best_map}")
+    await ctx.send(response)
+
+@bot.command()
+async def topquarter(ctx):
+    
+    response = (f"Top 25: {top25}")
     await ctx.send(response)
 
 
