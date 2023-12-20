@@ -30,7 +30,7 @@ os.environ["SSL_CERT_FILE"] = certifi.where()
 
 client_id = 28923
 
- # client_secret = 'pv6WR4HNI4yKlL7vWuvtDx2Owy8qUf2aoNpsT55v'
+
 
 api = Ossapi(client_id, client_secret)
 
