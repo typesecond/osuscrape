@@ -2,7 +2,7 @@ from ossapi import Ossapi, UserLookupKey, GameMode, RankingType, ScoringType, Sc
 import discord
 from discord.ext import commands, tasks
 import certifi 
-
+import interactions
 import json 
 import os 
 
@@ -12,19 +12,18 @@ if os.path.exists(os.getcwd() + "/config.json"):
         configData = json.load(f)
 
 else: 
-    configTemplate = {"Token": "", "Prefix": "!", "client_secret": ""}
+    configTemplate = {"Token": "", "Prefix": "!", "client_secret": "", "Channel_ID": ""}
     
     with open(os.getcwd() + "/config.json", "w+") as f: 
         json.dump(configTemplate, f)
 
 token = configData["Token"]
 prefix = configData["Prefix"]
-client_secret = configData["Client_secret"]
+client_secret = configData["client_secret"]
+channel_id = configData["Channel_ID"]
 
 
-from apscheduler.schedulers.asyncio import AsyncIOScheduler
-from datetime import datetime, time
-# import interactions
+
 
 os.environ["SSL_CERT_FILE"] = certifi.where()
 
@@ -79,8 +78,20 @@ first_user_score = usscore[0].pp
 
 intents = discord.Intents.all()
 
+client = discord.Client(intents=intents)
+
 bot = commands.Bot(command_prefix='!', intents=intents)
-scheduler = AsyncIOScheduler() 
+
+
+bot = interactions.Client(token=token)
+
+@bot.command(
+    name="my_first_command",
+    description="This is the first command I made!",
+    scope=channel_id,
+)
+async def my_first_command(ctx: interactions.CommandContext):
+    await ctx.send("Hi there!")
 
 @bot.command()
 async def topscorer(ctx):
@@ -101,7 +112,5 @@ async def topquarter(ctx):
     response = (f"Top 25: {top25}")
     await ctx.send(response)
 
-
-bot.run(token)
-
+bot.start()
 
