@@ -113,4 +113,4 @@ async def topquarter(ctx):
     await ctx.send(response)
 
 bot.start()
-
+ 
