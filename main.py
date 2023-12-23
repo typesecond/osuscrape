@@ -20,7 +20,7 @@ else:
 token = configData["Token"]
 prefix = configData["Prefix"]
 client_secret = configData["client_secret"]
-channel_id = configData["Channel_ID"]
+channel_id = configData["channel_id"]
 
 
 
@@ -88,25 +88,31 @@ bot = interactions.Client(token=token)
 @bot.command(
     name="my_first_command",
     description="This is the first command I made!",
-    scope=channel_id,
+
 )
 async def my_first_command(ctx: interactions.CommandContext):
     await ctx.send("Hi there!")
 
-@bot.command()
+@bot.command(  name="topscorer",
+    description="This is the first command I made!",
+)
 async def topscorer(ctx):
+    
+
     # Replace with actual method to fetch top scorer from Osu! API
    
     # Format the data in a user-friendly way
     response = (f"The king: {top.ranking[0].user.username}")
     await ctx.send(response)
-@bot.command()
+@bot.command(name="mybest",
+    description="This is the first command I made!")
 async def mybest(ctx):
    
     response = (f"Your top score is: {first_user_score} pp on {best_map}")
     await ctx.send(response)
 
-@bot.command()
+@bot.command(name="topquarter",
+    description="This is the first command I made!")
 async def topquarter(ctx):
     
     response = (f"Top 25: {top25}")
