@@ -105,7 +105,7 @@ async def topscorer(ctx):
     response = (f"The king: {top.ranking[0].user.username}")
     await ctx.send(response)
 @bot.command(name="mybest",
-    description="This is the first command I made!")
+    description="null")
 async def mybest(ctx):
    
     response = (f"Your top score is: {first_user_score} pp on {best_map}")
@@ -117,6 +117,6 @@ async def topquarter(ctx):
     
     response = (f"Top 25: {top25}")
     await ctx.send(response)
-
+# final
 bot.start()
  
