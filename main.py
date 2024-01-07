@@ -117,6 +117,6 @@ async def topquarter(ctx):
     
     response = (f"Top 25: {top25}")
     await ctx.send(response)
-# final
+# final when
 bot.start()
  
