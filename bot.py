@@ -6,7 +6,7 @@ from discord.ext import commands
 from dotenv import load_dotenv
 
 from discord_slash import SlashCommand # Importing the newly installed library.
-
+#next param
 load_dotenv()
 TOKEN = os.getenv('TOKEN')
 
